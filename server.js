@@ -4,14 +4,13 @@ const app = express();
 
 global.__basedir = __dirname;
 
-// app.use(cors());
-
 const initRoutes = require('./src/routes');
+
+const port = 8080;
 
 app.use(express.urlencoded({ extended: true }));
 initRoutes(app);
 
-const port = 8080;
 app.listen(port, () => {
   console.log(`Running at localhost:${port}`);
 });
